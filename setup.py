@@ -9,26 +9,29 @@ README = open(os.path.join(os.path.dirname(__file__), 'README.md')).read()
 os.chdir(os.path.normpath(os.path.join(os.path.abspath(__file__), os.pardir)))
 
 setup(
-    name='SlackBotManager',
-    version='0.5',
-    packages=['manager', 'linkbot'],
+    name='coffeebot',
+    version='0.1',
+    packages=['bot_manager'],
     include_package_data=True,
-    install_requires = [
+    install_requires=[
         'setuptools',
         'django<2.0',
-        'nameparser>=0.2.8'
+        'nameparser>=0.2.8',
+        'slacker',
+        'websocket-client',
+        'python-dateutil',
+        'django-compressor<2.0'
     ],
-    license='Apache License, Version 2.0',  # example license
+    license='Apache License, Version 2.0',
     description='An application that manages Slack Bots',
     long_description=README,
-    url='https://github.com/mikeseibel/slack-bot-manager',
-    author = "UW-IT ACA",
-    author_email = "aca-it@uw.edu",
+    url='https://github.com/devights/coffeebot',
+    author='Stephen De Vight',
     classifiers=[
         'Environment :: Web Environment',
         'Framework :: Django',
         'Intended Audience :: Developers',
-        'License :: OSI Approved :: Apache Software License', # example license
+        'License :: OSI Approved :: Apache Software License',
         'Operating System :: OS Independent',
         'Programming Language :: Python',
         'Programming Language :: Python :: 2.7',

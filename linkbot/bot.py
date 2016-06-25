@@ -1,5 +1,5 @@
 from bot_manager.slackbot import SlackBot
-from jira import JIRA
+# from jira import JIRA
 from random import randint
 import re
 
@@ -41,16 +41,16 @@ class LinkBotMessage(object):
 class JiraLinkBotMessage(LinkBotMessage):
     def build_message(self, link):
         msg = self.quip(link)
-        try:
-            jira = JIRA(self._conf['JIRA_HOST'],
-                        basic_auth=(self._conf['JIRA_LOGIN'],
-                                    self._conf['JIRA_PASSWORD']))
-            issue = jira.issue(ticket)
-            msg += '>>> %s' % self._escape(issue.fields.summary)
-        except Exception as ex:
-            if self._log:
-                self._log.error('JIRA: %s' % (ex))
-            pass
+        # try:
+        #     jira = JIRA(self._conf['JIRA_HOST'],
+        #                 basic_auth=(self._conf['JIRA_LOGIN'],
+        #                             self._conf['JIRA_PASSWORD']))
+        #     issue = jira.issue(ticket)
+        #     msg += '>>> %s' % self._escape(issue.fields.summary)
+        # except Exception as ex:
+        #     if self._log:
+        #         self._log.error('JIRA: %s' % (ex))
+        #     pass
 
         return msg
 
